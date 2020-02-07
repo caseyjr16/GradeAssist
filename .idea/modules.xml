@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/GradeAssist.iml" filepath="$PROJECT_DIR$/.idea/GradeAssist.iml" />
+      <module fileurl="file://$PROJECT_DIR$/app/GradeAssist-app.iml" filepath="$PROJECT_DIR$/app/GradeAssist-app.iml" />
       <module fileurl="file://$PROJECT_DIR$/Mobile Application Development -GradeAssist.iml" filepath="$PROJECT_DIR$/Mobile Application Development -GradeAssist.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
     </modules>
