@@ -26,4 +26,9 @@ class MainActivity : AppCompatActivity() {
         setupActionBarWithNavController(navController, appBarConfiguration)
         navView.setupWithNavController(navController)
     }
+
+    fun sendMessage(view: View) {
+
+        //Do something in response to button
+    }
 }
