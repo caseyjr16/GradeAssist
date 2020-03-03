@@ -1,0 +1,6 @@
+﻿.gradle
+.gradle/*
+.idea
+app/build
+local.properties
+GitHub-GradeAssist.iml
