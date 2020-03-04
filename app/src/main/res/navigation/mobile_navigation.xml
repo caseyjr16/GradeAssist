@@ -22,4 +22,10 @@
         android:name="com.example.gradeassist.ui.notifications.NotificationsFragment"
         android:label="@string/title_notifications"
         tools:layout="@layout/fragment_notifications" />
+
+    <fragment
+        android:id="@+id/quiz_results"
+        android:name="com.example.gradeassist.ui.quiz_results.NotificationsFragment"
+        android:label="@string/title_notifications"
+        tools:layout="@layout/fragment_notifications" />
 </navigation>
