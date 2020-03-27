@@ -1,0 +1,20 @@
+{
+  "quizzes": [
+    {
+      "id": 0,
+      "name": "Quiz One",
+      "questions": [
+        {
+          "text": "1 + 1 =",
+          "answer": "2",
+          "percentageCorrect": 100
+        },
+        {
+          "text": "6 * 8 =",
+          "answer": "48",
+          "percentageCorrect": 87.5
+        }
+      ]
+    }
+  ]
+}

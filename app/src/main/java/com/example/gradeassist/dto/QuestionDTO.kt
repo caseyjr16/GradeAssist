@@ -1,6 +1,6 @@
 package com.example.gradeassist.dto
 
-class Question(var questionId: Int) {
+class QuestionDTO(var questionId: Int, var text: String, var answer: String, var percentageCorrect: Double) {
 
     override fun toString(): String {
         return questionId.toString()
