@@ -1,0 +1,40 @@
+{
+  "quizzes": [
+    {
+      "quizId": 0,
+      "name": "Quiz One",
+      "questions": [
+        {
+          "questionId": 0,
+          "text": "1 + 1 =",
+          "answer": "2",
+          "percentageCorrect": 100
+        },
+        {
+          "questionId": 1,
+          "text": "6 * 8 =",
+          "answer": "48",
+          "percentageCorrect": 87.5
+        }
+      ]
+    },
+    {
+      "quizId": 1,
+      "name": "Quiz Two",
+      "questions": [
+        {
+          "questionId": 2,
+          "text": "Are birds real?",
+          "answer": "No",
+          "percentageCorrect": 25
+        },
+        {
+          "questionId": 3,
+          "text": "Is cereal soup?",
+          "answer": null,
+          "percentageCorrect": 100
+        }
+      ]
+    }
+  ]
+}
