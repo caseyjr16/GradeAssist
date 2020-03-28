@@ -1,19 +1,15 @@
 package com.example.gradeassist.dao
 
-import com.example.gradeassist.dto.QuestionDTO
 import com.example.gradeassist.dto.QuizDTO
+import com.example.gradeassist.repository.QuizRepository
 
 class QuizDAO: IQuizDAO {
 
     override fun fetchAll (): ArrayList<QuizDTO> {
-        return ArrayList<QuizDTO>()
+        return QuizRepository.fetchAll()
     }
 
     override fun fetchById(quizId: Int): QuizDTO {
-        return QuizDTO(
-            quizId = quizId,
-            name = "Quiz 0",
-            questions = ArrayList<QuestionDTO>()
-        )
+        return QuizRepository.fetchById(quizId)
     }
 }
