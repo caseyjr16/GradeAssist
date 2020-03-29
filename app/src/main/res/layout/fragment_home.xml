@@ -33,10 +33,10 @@
             android:text="Quiz Results" />
 
         <Button
-            android:id="@+id/button"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Open Quiz 1 Results" />
+                android:id="@+id/button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Open Quiz 1 Results" android:onClick="sendMessage"/>
 
         <Button
             android:id="@+id/button2"
