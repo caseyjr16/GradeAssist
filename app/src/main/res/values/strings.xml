@@ -3,4 +3,11 @@
     <string name="title_home">Home</string>
     <string name="title_dashboard">Dashboard</string>
     <string name="title_notifications">Notifications</string>
+    <string name="heading">Quiz Results</string>
+    <string name="second_heading">Upcoming Quizzes</string>
+    <string name="quiz_1_results">Open Quiz 1 Results</string>
+    <string name="quiz_2_results">Open Quiz 2 Results</string>
+    <string name="upcoming1">Next Week</string>
+    <string name="upcoming2">In 2 weeks</string>
+    <string name="upcoming3">In 3 weeks</string>
 </resources>
