@@ -10,4 +10,7 @@
     <string name="upcoming1">Next Week</string>
     <string name="upcoming2">In 2 weeks</string>
     <string name="upcoming3">In 3 weeks</string>
+    <string name="quiz3_preview">Preview Quiz 3</string>
+    <string name="quiz4_preview">Preview Quiz 4</string>
+    <string name="quiz5_preview">Preview Quiz 5</string>
 </resources>
