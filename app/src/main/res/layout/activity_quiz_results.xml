@@ -6,11 +6,32 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         tools:context=".ui.quiz_results.QuizResults">
-
     <TextView
-            android:text="TextView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" app:layout_constraintTop_toTopOf="parent"
+            android:text="Quiz 1"
+            android:layout_width="82dp"
+            android:layout_height="28dp" app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintStart_toStartOf="parent" android:layout_marginLeft="16dp"
             android:layout_marginTop="16dp" android:layout_marginStart="16dp" android:id="@+id/textView4"/>
+    <TextView
+            android:text="Question 1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" tools:layout_editor_absoluteY="47dp"
+            tools:layout_editor_absoluteX="309dp" android:id="@+id/textView5"/>
+    <TextView
+            android:text="1 + 1 = "
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" tools:layout_editor_absoluteY="81dp"
+            tools:layout_editor_absoluteX="310dp" android:id="@+id/textView6"/>
+    <TextView
+            android:text="Answer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" tools:layout_editor_absoluteY="114dp"
+            app:layout_constraintStart_toStartOf="parent" app:layout_constraintEnd_toEndOf="parent"
+            android:id="@+id/textView7"/>
+    <TextView
+            android:text="Percentage Correct"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" tools:layout_editor_absoluteY="152dp"
+            app:layout_constraintStart_toStartOf="parent" app:layout_constraintEnd_toEndOf="parent"
+            android:id="@+id/textView8"/>
 </androidx.constraintlayout.widget.ConstraintLayout>
