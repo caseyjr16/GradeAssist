@@ -1,5 +1,7 @@
 package com.example.gradeassist.ui.notifications
 
+import android.app.Activity
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -27,5 +29,12 @@ class NotificationsFragment : Fragment() {
             textView.text = it
         })
         return root
+    }
+
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        super.onActivityResult(requestCode, resultCode, data)
+        if (requestCode == Activity.RESULT_OK){
+            //TODO Add the needed onActivityResult if statements with resultCodes  needed for this fragments
+        }
     }
 }
