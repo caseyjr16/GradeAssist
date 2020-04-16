@@ -1,132 +1,74 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/container"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:paddingTop="?attr/actionBarSize">
+                                                   xmlns:app="http://schemas.android.com/apk/res-auto"
+                                                   xmlns:tools="http://schemas.android.com/tools"
+                                                   android:id="@+id/container"
+                                                   android:layout_width="match_parent"
+                                                   android:layout_height="match_parent"
+                                                   android:paddingTop="?attr/actionBarSize">
 
+    <Button
+            android:id="@+id/button11"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:hint="@string/quiz4_preview" android:text="@string/quiz4_preview"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginTop="8dp" app:layout_constraintTop_toBottomOf="@+id/button10"
+            app:layout_constraintEnd_toEndOf="parent"/>
+    <Button
+            android:id="@+id/button8"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:hint="@string/quiz_2_results"
+            android:text="@string/quiz_2_results"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginTop="8dp" app:layout_constraintTop_toBottomOf="@+id/button9"
+            app:layout_constraintEnd_toEndOf="parent" android:onClick="viewQuiz"/>
+    <Button
+            android:id="@+id/button9"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:hint="@string/quiz_1_results"
+            android:text="@string/quiz_1_results"
+            app:layout_constraintTop_toTopOf="@+id/nav_host_fragment" app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginTop="94dp" app:layout_constraintEnd_toEndOf="parent" android:onClick="viewQuiz"/>
+    <Button
+            android:id="@+id/button10"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:hint="@string/quiz3_preview" android:text="@string/quiz3_preview"
+            android:onClick="viewQuiz"
+            app:layout_constraintStart_toStartOf="parent" android:layout_marginTop="71dp"
+            app:layout_constraintTop_toBottomOf="@+id/button8" app:layout_constraintEnd_toEndOf="parent"/>
+    <Button
+            android:id="@+id/button12"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@string/quiz5_preview" android:hint="@string/quiz5_preview"
+            android:onClick="viewQuiz"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginTop="20dp" app:layout_constraintTop_toBottomOf="@+id/button11"
+            app:layout_constraintEnd_toEndOf="parent"/>
     <com.google.android.material.bottomnavigation.BottomNavigationView
-        android:id="@+id/nav_view"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="0dp"
-        android:layout_marginEnd="0dp"
-        android:background="?android:attr/windowBackground"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:menu="@menu/bottom_nav_menu" />
+            android:id="@+id/nav_view"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:background="?android:attr/windowBackground"
+            app:menu="@menu/bottom_nav_menu"
+            app:layout_constraintTop_toBottomOf="@+id/nav_host_fragment" app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" app:layout_constraintBottom_toBottomOf="parent"/>
 
 
     <fragment
-        android:id="@+id/nav_host_fragment"
-        android:name="androidx.navigation.fragment.NavHostFragment"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        app:defaultNavHost="true"
-        app:layout_constraintBottom_toTopOf="@id/nav_view"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0"
-        app:navGraph="@navigation/mobile_navigation" />
-    <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical"
-    >
-
-        <EditText
-                android:id="@+id/editText2"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:ems="10"
-                android:inputType="textPersonName"
-                android:hint="@string/heading"
-                android:importantForAutofill="no"
-                android:text="@string/heading"/>
-
-        <Button
-                android:id="@+id/button"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="@string/quiz_1_results"
-                android:text="@string/quiz_1_results"/>
-
-        <Button
-                android:id="@+id/button2"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="@string/quiz_2_results"
-                android:text="@string/quiz_2_results"/>
-        <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="vertical"
-        >
-
-            <EditText
-                    android:id="@+id/editText3"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:ems="10"
-                    android:inputType="textPersonName"
-                    android:hint="@string/second_heading"
-                    android:text="@string/second_heading"
-                    android:importantForAutofill="no"/>
-
-            <TextView
-                    android:id="@+id/textView"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="8dp"
-                    android:importantForAutofill="no"
-                    android:hint="@string/upcoming1"
-                    android:text="@string/upcoming1"
-                    android:layout_marginStart="8dp"/>
-
-            <Button
-                    android:id="@+id/button3"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:hint="@string/quiz3_preview" android:text="@string/quiz3_preview"/>
-
-            <TextView
-                    android:id="@+id/textView2"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="8dp"
-                    android:importantForAutofill="no"
-                    android:hint="@string/upcoming2"
-                    android:text="@string/upcoming2"
-                    android:layout_marginStart="8dp"/>
-
-            <Button
-                    android:id="@+id/button4"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:hint="@string/quiz4_preview" android:text="@string/quiz4_preview"/>
-
-            <TextView
-                    android:id="@+id/textView3"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="8dp"
-                    android:importantForAutofill="no"
-                    android:text="@string/upcoming3"
-                    android:hint="@string/upcoming3"
-                    android:layout_marginStart="8dp"/>
-
-            <Button
-                    android:id="@+id/button5"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="@string/quiz5_preview" android:hint="@string/quiz5_preview"/>
-        </LinearLayout>
-    </LinearLayout>
+            android:id="@+id/nav_host_fragment"
+            android:name="androidx.navigation.fragment.NavHostFragment"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:defaultNavHost="true"
+            app:navGraph="@navigation/mobile_navigation"
+            android:layout_marginTop="56dp" app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toTopOf="@+id/nav_view" app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"/>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
