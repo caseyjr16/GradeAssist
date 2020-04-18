@@ -3,4 +3,5 @@
 .idea
 app/build
 local.properties
+*.iml
 GitHub-GradeAssist.iml
