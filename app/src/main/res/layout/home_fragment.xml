@@ -40,14 +40,14 @@
                 android:layout_height="wrap_content"
                 android:hint="@string/quiz_1_results"
                 android:text="@string/quiz_1_results"
-        />
+                android:visibility="invisible"/>
 
         <Button
                 android:id="@+id/button2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="@string/quiz_2_results"
-                android:text="@string/quiz_2_results"/>
+                android:text="@string/quiz_2_results" android:visibility="invisible"/>
     </LinearLayout>
 
     <LinearLayout
@@ -80,7 +80,8 @@
                 android:id="@+id/button3"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="@string/quiz3_preview" android:text="@string/quiz3_preview"/>
+                android:hint="@string/quiz3_preview" android:text="@string/quiz3_preview"
+                android:visibility="invisible"/>
 
         <TextView
                 android:id="@+id/textView2"
@@ -96,7 +97,8 @@
                 android:id="@+id/button4"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="@string/quiz4_preview" android:text="@string/quiz4_preview"/>
+                android:hint="@string/quiz4_preview" android:text="@string/quiz4_preview"
+                android:visibility="invisible"/>
 
         <TextView
                 android:id="@+id/textView3"
@@ -108,11 +110,6 @@
                 android:hint="@string/upcoming3"
                 android:layout_marginStart="8dp"/>
 
-        <Button
-                android:id="@+id/button5"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/quiz5_preview" android:hint="@string/quiz5_preview"/>
     </LinearLayout>
 
     <LinearLayout
