@@ -12,4 +12,5 @@ class QuizDAO: IQuizDAO {
     override fun fetchById(quizId: Int): QuizDTO {
         return QuizRepository.fetchById(quizId)
     }
+
 }
