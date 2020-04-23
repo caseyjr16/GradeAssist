@@ -16,4 +16,14 @@ class QuizUnitTest {
         assert(quizzes !== null);
     }
 
+    @Test
+    fun apiCall_isSuccessful() {
+        var quizzes = QuizRepository.fetchFromApi()
+
+        println("OPEN TRIVIA DB RETURNS:")
+        println(quizzes);
+
+        assert(quizzes !== null);
+    }
+
 }
