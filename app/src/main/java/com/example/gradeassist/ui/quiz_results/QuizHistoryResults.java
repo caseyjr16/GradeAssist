@@ -5,19 +5,18 @@ import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import java.util.List;
+
 import com.example.gradeassist.R;
 import com.example.gradeassist.ui.quiz.history.HistoryQuestion;
 import com.example.gradeassist.ui.quiz.history.HistoryQuizApi;
-
-import java.util.List;
-
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
-public class ShowHistoryQuiz extends AppCompatActivity {
+public class QuizHistoryResults extends AppCompatActivity {
     private TextView textViewResult;
 
     @Override
@@ -25,7 +24,7 @@ public class ShowHistoryQuiz extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.show_history_quiz);
 
-        textViewResult = findViewById(R.id.quiz_results);
+        textViewResult = findViewById(R.id.history_quiz_results);
 
 
         Retrofit retrofit = new Retrofit.Builder()
@@ -33,9 +32,9 @@ public class ShowHistoryQuiz extends AppCompatActivity {
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
 
-        HistoryQuizApi historyQuizApi = retrofit.create(HistoryQuizApi.class);
+        HistoryQuizApi newQuizApi = retrofit.create(HistoryQuizApi.class);
 
-        Call<List<HistoryQuestion>> call = historyQuizApi.getQuestions();
+        Call<List<HistoryQuestion>> call = newQuizApi.getQuestions();
 
         call.enqueue(new Callback<List<HistoryQuestion>>() {
             @Override
@@ -48,17 +47,17 @@ public class ShowHistoryQuiz extends AppCompatActivity {
                 List<HistoryQuestion> questions = response.body();
                 int i = 1;
 
-                for  (HistoryQuestion historyQuestion : questions) {
+                for  (HistoryQuestion geographyQuestion : questions) {
 
                     String questionString = "";
                     String answerString = "";
                     String percentCorrectString = "";
 
-                    questionString += "Question #" + i + ": \n" + historyQuestion.getQuestion() + "\n";
+                    questionString += "Question #" + i + ": \n" + geographyQuestion.getQuestion() + "\n";
 
-                    answerString += "Answer: " + historyQuestion.getCorrect_answer() + "\n";
+                    answerString += "Answer: " + geographyQuestion.getCorrect_answer() + "\n";
 
-                    percentCorrectString += "Answered Correctly: " + historyQuestion.getPercent_correct() + "%\n\n";
+                    percentCorrectString += "Answered Correctly: " + geographyQuestion.getPercent_correct() + "%\n\n";
 
                     textViewResult.append(questionString);
                     textViewResult.append(answerString);

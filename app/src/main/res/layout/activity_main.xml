@@ -21,16 +21,15 @@
         app:layout_constraintTop_toTopOf="@+id/nav_host_fragment" />
 
     <Button
-        android:id="@+id/btnQuiz2"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:hint="@string/quiz_2_results"
-        android:onClick="viewHistoryQuiz"
-        android:text="@string/quiz_2_results"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnQuiz1" />
+            android:id="@+id/btnQuiz2"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:onClick="viewHistoryQuiz"
+            android:text="@string/quiz_2_results"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/btnQuiz1"/>
 
 
     <Button
