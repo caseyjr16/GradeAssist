@@ -6,8 +6,8 @@ import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.gradeassist.R;
-import com.example.gradeassist.ui.quiz.NewQuizApi;
-import com.example.gradeassist.ui.quiz.Question;
+import com.example.gradeassist.ui.quiz.geography.GeographyQuestion;
+import com.example.gradeassist.ui.quiz.geography.GeographyQuizApi;
 
 import java.util.List;
 
@@ -17,47 +17,48 @@ import retrofit2.Response;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
-public class ShowQuizActivity extends AppCompatActivity {
+public class ShowGeographyQuiz extends AppCompatActivity {
     private TextView textViewResult;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_show_quiz_acitivity);
+        setContentView(R.layout.show_geography_quiz);
 
         textViewResult = findViewById(R.id.quiz_results);
+
 
         Retrofit retrofit = new Retrofit.Builder()
                 .baseUrl("https://raw.githubusercontent.com/")
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
 
-        NewQuizApi newQuizApi = retrofit.create(NewQuizApi.class);
+        GeographyQuizApi newQuizApi = retrofit.create(GeographyQuizApi.class);
 
-        Call<List<Question>> call = newQuizApi.getQuestions();
+        Call<List<GeographyQuestion>> call = newQuizApi.getQuestions();
 
-        call.enqueue(new Callback<List<Question>>() {
+        call.enqueue(new Callback<List<GeographyQuestion>>() {
             @Override
-            public void onResponse(Call<List<Question>> call, Response<List<Question>> response) {
+            public void onResponse(Call<List<GeographyQuestion>> call, Response<List<GeographyQuestion>> response) {
                 if (!response.isSuccessful()) {
                     textViewResult.setText("Code: " + response.code());
                     return;
                 }
 
-                List<Question> questions = response.body();
+                List<GeographyQuestion> questions = response.body();
                 int i = 1;
 
-                for  (Question question : questions) {
+                for  (GeographyQuestion geographyQuestion : questions) {
 
                     String questionString = "";
                     String answerString = "";
                     String percentCorrectString = "";
 
-                    questionString += "Question #" + i + ": \n" + question.getQuestion() + "\n";
+                    questionString += "Question #" + i + ": \n" + geographyQuestion.getQuestion() + "\n";
 
-                    answerString += "Answer: " + question.getCorrect_answer() + "\n";
+                    answerString += "Answer: " + geographyQuestion.getCorrect_answer() + "\n";
 
-                    percentCorrectString += "Answered Correctly: " + question.getPercent_correct() + "%\n\n";
+                    percentCorrectString += "Answered Correctly: " + geographyQuestion.getPercent_correct() + "%\n\n";
 
                     textViewResult.append(questionString);
                     textViewResult.append(answerString);
@@ -68,7 +69,7 @@ public class ShowQuizActivity extends AppCompatActivity {
             }
 
             @Override
-            public void onFailure(Call<List<Question>> call, Throwable t) {
+            public void onFailure(Call<List<GeographyQuestion>> call, Throwable t) {
                 textViewResult.setText(t.getMessage());
             }
 

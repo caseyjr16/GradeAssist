@@ -1,7 +1,6 @@
-package com.example.gradeassist.ui.quiz;
+package com.example.gradeassist.ui.quiz.geography;
 
-public class Question {
-
+public class GeographyQuestion {
     private String question;
     private String correct_answer;
     private String percent_correct;
