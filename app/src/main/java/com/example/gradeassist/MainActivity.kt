@@ -8,7 +8,7 @@ import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
-import com.example.gradeassist.ui.quiz_results.QuizHistoryResults
+import com.example.gradeassist.ui.quiz_results.ShowHistoryQuiz
 import com.example.gradeassist.ui.quiz_results.ShowGeographyQuiz
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
@@ -38,7 +38,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun viewHistoryQuiz(view: View) {
-        val intent = Intent(applicationContext, QuizHistoryResults::class.java)
+        val intent = Intent(applicationContext, ShowHistoryQuiz::class.java)
         startActivity(intent)
     }
 

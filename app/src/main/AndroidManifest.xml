@@ -11,7 +11,8 @@
             android:roundIcon="@mipmap/ic_launcher_round"
             android:supportsRtl="true"
             android:theme="@style/AppTheme">
-        <activity android:name=".ui.quiz_results.QuizHistoryResults">
+        <activity android:name=".ui.quiz_results.ShowHistoryQuiz"
+                  android:parentActivityName=".MainActivity">
         </activity>
         <activity
                 android:name=".ui.quiz_results.ShowGeographyQuiz"

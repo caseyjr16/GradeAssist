@@ -16,7 +16,7 @@ import retrofit2.Response;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
-public class QuizHistoryResults extends AppCompatActivity {
+public class ShowHistoryQuiz extends AppCompatActivity {
     private TextView textViewResult;
 
     @Override
