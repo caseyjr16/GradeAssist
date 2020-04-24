@@ -15,8 +15,8 @@ class QuestionDAO: IQuestionDAO {
     override fun fetchById(questionId: Int): QuestionDTO {
         return QuestionDTO(
             questionId = questionId,
-            text = "Question Text",
-            answer = "Question Answer",
+            text = "HistoryQuestion Text",
+            answer = "HistoryQuestion Answer",
             percentageCorrect = 85.5
         )
     }

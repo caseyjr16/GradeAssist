@@ -8,7 +8,8 @@ import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
-import com.example.gradeassist.ui.quiz_results.ShowQuizActivity
+import com.example.gradeassist.ui.quiz_results.ShowHistoryQuiz
+import com.example.gradeassist.ui.quiz_results.ShowGeographyQuiz
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
 class MainActivity : AppCompatActivity() {
@@ -23,22 +24,21 @@ class MainActivity : AppCompatActivity() {
         // menu should be considered as top level destinations.
         val appBarConfiguration = AppBarConfiguration(
             setOf(
-                R.id.navigation_home, R.id.navigation_notifications
+                R.id.navigation_home
             )
         )
         setupActionBarWithNavController(navController, appBarConfiguration)
         navView.setupWithNavController(navController)
 
-
-
-
-
     }
 
+    fun viewGeographyQuiz(view: View) {
+        val intent = Intent(applicationContext, ShowGeographyQuiz::class.java)
+        startActivity(intent)
+    }
 
-
-    fun viewQuiz1(view: View) {
-        val intent = Intent(applicationContext, ShowQuizActivity::class.java)
+    fun viewHistoryQuiz(view: View) {
+        val intent = Intent(applicationContext, ShowHistoryQuiz::class.java)
         startActivity(intent)
     }
 
