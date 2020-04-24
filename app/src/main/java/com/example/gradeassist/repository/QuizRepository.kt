@@ -4,10 +4,28 @@ import com.example.gradeassist.dto.QuizDTO
 import com.google.gson.Gson
 import java.io.File
 import java.net.URL
+import java.util.*
+import kotlin.collections.ArrayList
+import kotlin.math.round
 
 // class only used for parsing JSON for right now
 // we could move this into a proper DTO if we need to
 class QuizListDTO(var quizzes: ArrayList<QuizDTO>) {}
+
+data class APIQuestionDTO (
+    var category: String,
+    var type: String,
+    var difficulty: String,
+    var question: String,
+    var correct_answer: String,
+    var incorrect_answers: ArrayList<String>
+) {
+    override fun toString(): String { return "\n(category=${category}) (type=${type}) (difficulty=${difficulty}) (question=${question}) (correct_answer=${correct_answer}) (incorrect_answers=${incorrect_answers})\n" }
+}
+
+data class APIResponseDTO(var response_code: Int, var results: ArrayList<APIQuestionDTO>) {
+    override fun toString(): String { return "\n(response_code=${response_code}) (results=$results)\n" }
+}
 
 open class QuizRepository {
 
@@ -42,40 +60,38 @@ open class QuizRepository {
             )
         }
 
-        data class APIQuestionDTO(
-            var category: String,
-            var type: String,
-            var difficulty: String,
-            var question: String,
-            var correct_answer: String,
-            var incorrect_answers: ArrayList<String>
-        ) {
-            override fun toString(): String { return "\n(category=${category}) (type=${type}) (difficulty=${difficulty}) (question=${question}) (correct_answer=${correct_answer}) (incorrect_answers=${incorrect_answers})\n" }
-        }
-
-        data class APIResponseDTO(var response_code: Int, var results: ArrayList<APIQuestionDTO>) {
-            override fun toString(): String { return "\n(response_code=${response_code}) (results=$results)\n" }
-        }
-
-
         fun fetchFromApi(): QuizDTO {
 
             // API call to https://opentdb.com/
             val result = URL("https://opentdb.com/api.php?amount=10&category=22&difficulty=medium").readText()
-
             val gson = Gson()
 
+            var returnQuiz = QuizDTO(quizId = 0, name = "Geography Quiz 1", questions = ArrayList<QuestionDTO>()  )
+
+            var questionId:Int = 0;
+            val min = 50
+            val max = 100
+
             // JSON string to QuizListDTO
-            val quizList: APIResponseDTO = gson.fromJson(result, APIResponseDTO::class.java)
+            val apiResponseDTO: APIResponseDTO = gson.fromJson(result, APIResponseDTO::class.java)
 
-            print(quizList)
+            apiResponseDTO.results.forEach {
 
-            // this is blank
-            return QuizDTO(
-                quizId = 0,
-                name = "None",
-                questions = ArrayList<QuestionDTO>()
-            )
+                val r = Random()
+
+                returnQuiz.questions.add(
+                    QuestionDTO(
+                        questionId = questionId,
+                        text = it.question,
+                        answer = it.correct_answer,
+                        percentageCorrect = round(min + (max - min) * r.nextDouble())
+                    )
+                )
+
+                questionId++
+            }
+
+            return returnQuiz;
 
         }
 
